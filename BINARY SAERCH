@@ -1,0 +1,30 @@
+
+ int bs(int a[],int n, int num)
+ {
+   int s=0;
+   int e=n-1;
+   while(s<=e)
+   {
+   int mid=(s+e)/2;          // 0+11/2 = 5
+   if (a[mid]== num)
+   {
+     return mid;
+   }
+   else if(a[mid]>num)
+       e=mid-1;
+   else
+       s=mid+1;
+   }
+ }
+ 
+ 
+ 
+ int main()
+ {
+ int a[]= {1,2,3,4,6,7,8,9,10,11};
+ int num=8;
+ int n=sizeof(a)/sizeof(int);          // sizeof(a)// =11*4=44 ; sizeof(a)/ sizeof(int) = 44/4 = 11
+ int result=bs(a,n,num);
+ cout<<result;
+ return 0;
+ }
